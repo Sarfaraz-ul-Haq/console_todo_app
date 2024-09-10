@@ -1,9 +1,9 @@
 from typing import Any, List, Dict, Union
 
-todo_list = []
+todo_list: List[Dict[str, Union[str, bool]]] = []
 
 while True:
-    todo = input("Enter a todo or exit: ")
+    todo: str = input("Enter a todo or exit: ")
 
     if todo.lower() == "exit":
         break
