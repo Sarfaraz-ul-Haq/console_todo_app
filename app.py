@@ -26,7 +26,7 @@
 
 from typing import List, Tuple
 
-ToDoItem = Tuple[str, str]
+ToDoItem = Tuple[str, bool]
 
 todo_list: List[ToDoItem] = [
     ("Learn Generative AI Fundamentals", "Pending"),
@@ -36,7 +36,7 @@ todo_list: List[ToDoItem] = [
 
 def display_todos(todo_list: List[ToDoItem]) -> None:
     if not todo_list:
-        print("empty todo list")
+        print("Your To-Do list is empty!")
         return
 
     print(f"\nHere is your todo list:\n")
