@@ -29,8 +29,8 @@ from typing import List, Tuple
 ToDoItem = Tuple[str, bool]
 
 todo_list: List[ToDoItem] = [
-    ("Learn Generative AI Fundamentals", "Pending"),
-    ("Learn LangChain", "Pending"),
+    ("Learn Generative AI Fundamentals", False),
+    ("Learn LangChain", False),
 ]
 
 
