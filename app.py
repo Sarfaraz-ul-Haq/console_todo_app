@@ -36,7 +36,7 @@ todo_list: List[ToDoItem] = [
 
 def display_todos(todo_list: List[ToDoItem]) -> None:
     if not todo_list:
-        print("Your To-Do list is empty!")
+        print("Your Todo list is empty!")
         return
 
     print(f"\nHere is your todo list:\n")
@@ -44,9 +44,18 @@ def display_todos(todo_list: List[ToDoItem]) -> None:
         if is_completed:
             status: str = "Done"
         else:
-            status: str = "Pending"
+            status = "Pending"
 
         print(f"{id}. {todo} - [{status}]")
 
+
+def add_todo(to_do_list: List[ToDoItem], todo: str) -> None:
+    todo_list.append((todo, False))
+    print(f"Added todo: {todo}")
+
+
+display_todos(todo_list)
+
+add_todo(todo_list, "Learn Transformers")
 
 display_todos(todo_list)
