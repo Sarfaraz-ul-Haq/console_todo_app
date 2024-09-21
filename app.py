@@ -1,6 +1,5 @@
 # from typing import Any, List, Dict, Union
 
-# todo: Dict[str,]
 # todo_list: List[Dict[str, Union[str, bool]]] = []
 
 # while True:
