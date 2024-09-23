@@ -1,5 +1,3 @@
----
-
 # Python To-Do Console App (Functional Approach)
 
 
