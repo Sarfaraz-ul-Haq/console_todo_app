@@ -86,7 +86,7 @@ def main() -> None:
             if todo != "" and description != "":
                 add_todo_item(todo_list, todo, description)
             else:
-                print("Task description cannot be empty!\n")
+                print("Todo / description cannot be empty!\n")
 
         elif choice == "3":
             pass
