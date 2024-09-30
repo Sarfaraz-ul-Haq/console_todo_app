@@ -1,6 +1,11 @@
 from typing import List, Dict, Union
+from typing_extensions import TypedDict
 
-ToDoItem = Dict[str, Union[str, bool]]
+class ToDoItem(TypedDict):
+    todo: str
+    description: str
+    is_completed: bool
+
 
 todo_list: List[ToDoItem] = [
     {
@@ -33,7 +38,7 @@ def display_todo_list(todo_list: List[ToDoItem]) -> None:
 
 
 
-def add_todo_item(to_do_list: List[ToDoItem], todo: str, description: str) -> None:
+def add_todo_item(todo_list: List[ToDoItem], todo: str, description: str) -> None:
     todo_list.append({"todo": todo, "description": description, "is_completed": False})
     print(f"\nAdded todo: {todo} | Description: {description}")
 
@@ -56,6 +61,16 @@ def delete_todo_item(index: int) -> None:
     else:
         todo_list.pop(index)
         print("\nTodo deleted successfully")
+
+def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, description: str) -> None:
+    index -= 1
+
+    if index >= 0 and index < len(todo_list):
+        todo_list[index]["todo"] = todo
+        todo_list[index]["description"] = description
+    else:
+        raise IndexError("Invalid todo index")
+    
 
     
 # add_todo(todo_list, "Learn Transformers")
@@ -89,7 +104,10 @@ def main() -> None:
                 print("Todo / description cannot be empty!\n")
 
         elif choice == "3":
-            pass
+            index: int = int(input("Enter todo number to update: "))
+            new_todo: str = input("Update todo: ")
+            new_description: str = input("Update todo description: ")
+            update_todo_item(index, todo_list, new_todo, new_description)
 
         elif choice == "4":
             pass
