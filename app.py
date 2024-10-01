@@ -1,11 +1,10 @@
-from typing import List, Dict, Union
+from typing import List
 from typing_extensions import TypedDict
 
 class ToDoItem(TypedDict):
     todo: str
     description: str
     is_completed: bool
-
 
 todo_list: List[ToDoItem] = [
     {
@@ -36,12 +35,9 @@ def display_todo_list(todo_list: List[ToDoItem]) -> None:
 
     print("_________________________________________________________________________________________________________\n")
 
-
-
 def add_todo_item(todo_list: List[ToDoItem], todo: str, description: str) -> None:
     todo_list.append({"todo": todo, "description": description, "is_completed": False})
     print(f"\nAdded todo: {todo} | Description: {description}")
-
 
 def get_task_number(action: str) -> int:
     display_todo_list(todo_list)
@@ -56,12 +52,12 @@ def get_task_number(action: str) -> int:
 def delete_todo_item(index: int) -> None:
     index -= 1
 
-    if index < 0 or index >= len(todo_list):
-        raise IndexError("Invalid todo index.")
-    else:
+    if index >= 0 or index < len(todo_list):
         todo_list.pop(index)
         print("\nTodo deleted successfully")
-
+    else:
+        raise IndexError("Invalid todo index.")
+        
 def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, description: str) -> None:
     index -= 1
 
@@ -69,14 +65,16 @@ def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, descripti
         todo_list[index]["todo"] = todo
         todo_list[index]["description"] = description
     else:
-        raise IndexError("Invalid todo index")
+        raise IndexError("Invalid index")
     
-
+def mark_todo_as_done(index: int, todo_list: List[ToDoItem]) -> None:
+    index -= 1
+    try:
+        if index >= 0 and index < len(todo_list):
+            todo_list[index]["is_completed"] = True
+    except:
+        raise IndexError("Invalid index")
     
-# add_todo(todo_list, "Learn Transformers")
-
-# display_todos(todo_list)
-
 
 def main() -> None:
     while True:
@@ -110,7 +108,8 @@ def main() -> None:
             update_todo_item(index, todo_list, new_todo, new_description)
 
         elif choice == "4":
-            pass
+            index: int = int(input("Enter index: "))
+            mark_todo_as_done(index, todo_list)
 
         elif choice == "5":
             try:
@@ -120,7 +119,9 @@ def main() -> None:
                 print("\nInvalid input. Please enter a number.")
 
         elif choice == "6":
-            pass
+            print("Todo app closed")
+            break
 
 
 main()
+
