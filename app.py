@@ -69,12 +69,13 @@ def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, descripti
     
 def mark_todo_as_done(index: int, todo_list: List[ToDoItem]) -> None:
     index -= 1
-    try:
-        if index >= 0 and index < len(todo_list):
+
+    if index >= 0 and index < len(todo_list):
             todo_list[index]["is_completed"] = True
-    except:
-        raise IndexError("Invalid index")
-    
+            print("Todo marked as done")
+    else:
+        print("\nInvalid index")
+
 
 def main() -> None:
     while True:
@@ -121,7 +122,6 @@ def main() -> None:
         elif choice == "6":
             print("Todo app closed")
             break
-
 
 main()
 
