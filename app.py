@@ -52,7 +52,7 @@ def get_task_number(action: str) -> int:
 def delete_todo_item(index: int) -> None:
     index -= 1
 
-    if index >= 0 or index < len(todo_list):
+    if index >= 0 and index < len(todo_list):
         todo_list.pop(index)
         print("\nTodo deleted successfully")
     else:
