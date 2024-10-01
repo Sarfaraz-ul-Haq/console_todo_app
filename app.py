@@ -104,8 +104,8 @@ def main() -> None:
 
         elif choice == "3":
             index: int = int(input("Enter todo number to update: "))
-            new_todo: str = input("Update todo: ")
-            new_description: str = input("Update todo description: ")
+            new_todo: str = input("Update todo: ").strip()
+            new_description: str = input("Update todo description: ").strip()
             update_todo_item(index, todo_list, new_todo, new_description)
 
         elif choice == "4":
