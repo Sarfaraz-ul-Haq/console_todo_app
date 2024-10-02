@@ -39,7 +39,7 @@ def add_todo_item(todo_list: List[ToDoItem], todo: str, description: str) -> Non
     todo_list.append({"todo": todo, "description": description, "is_completed": False})
     print(f"\nAdded todo: {todo} | Description: {description}")
 
-def get_task_number(action: str) -> int:
+def get_todo_number(action: str) -> int:
     display_todo_list(todo_list)
 
     while True:
