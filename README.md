@@ -1,15 +1,13 @@
 # Python To-Do Console App (Functional Approach)
 
 
-This is a simple console-based todo app implemented in Python, using the functional programming approach. It uses type hints for better code clarity and supports basic CRUD (Create, Read, Update, Delete) operations to manage tasks. The project is designed as a learning exercise and will eventually be refactored into an object-oriented programming (OOP) version.
-
+This project is a simple console-based to-do application implemented in Python that operates through a command-line interface. It leverages type hints for enhanced code clarity and supports basic CRUD (Create, Read, Update, Delete) operations for task management. This application serves as a practical exercise to understand basic programming constructs.
 ## Features
 
 - **Create**: Add new tasks to your to-do list.
 - **Read**: View all your tasks with status (completed or not).
 - **Update**: Modify task descriptions or mark them as completed.
 - **Delete**: Remove tasks from the list.
-- **Type Hints**: Ensures type safety and improves code readability.
 
 ## Installation
 
@@ -19,13 +17,7 @@ This is a simple console-based todo app implemented in Python, using the functio
    git clone https://github.com/Sarfaraz-ul-Haq/console_todo_app.git
    ```
 
-2. Navigate into the project directory:
-
-   ```bash
-   cd app.py
-   ```
-
-3. Run the Python script:
+2. Run the Python script:
 
    ```bash
    python app.py
@@ -35,25 +27,14 @@ This is a simple console-based todo app implemented in Python, using the functio
 
 After running the script, you can interact with the console to perform CRUD operations:
 
-- **1** Display todo list
-- **2** Add a todo
-- **3** Update todo
-- **4** Mark todo as done
-- **5** Delete todo
-- **6** Exit
+- **1.** Display todo list
+- **2.** Add a todo
+- **3.** Update todo
+- **4.** Mark todo as done
+- **5.** Delete todo
+- **6.** Exit
 
-## Example
-
-```bash
-will add soon
-```
-
-
-# Learning Goals
-This project currently demonstrates a functional programming approach to building a todo app. In the next iteration, I plan to refactor the app to follow an object-oriented programming (OOP) model, focusing on:
-
-- Encapsulating task-related logic within a Task class.
-- Managing the task list through a TaskManager class.
-- Structuring the app in a more scalable and maintainable way using best practices.
+![Screenshot 2024-10-03 103545](https://github.com/user-attachments/assets/015dbc9a-cc04-4ed4-9c85-2265439640e1)
+![Screenshot 2024-10-03 103602](https://github.com/user-attachments/assets/19de02a0-1ccf-4983-927c-59e29323f2c8)
 
 ---
