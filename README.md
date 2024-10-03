@@ -1,4 +1,4 @@
-# Python To-Do Console App (Functional Approach)
+# Python To-Do Console App
 
 
 This project is a simple console-based to-do application implemented in Python that operates through a command-line interface. It leverages type hints for enhanced code clarity and supports basic CRUD (Create, Read, Update, Delete) operations for task management. This application serves as a practical exercise to understand basic programming constructs.
