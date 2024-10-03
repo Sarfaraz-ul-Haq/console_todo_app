@@ -40,7 +40,7 @@ def add_todo_item(todo: str, description: str) -> None:
     print(f"\nAdded todo: {todo} | Description: {description}")
 
 def get_todo_number(action: str) -> int:
-    display_todo_list(todo_list)
+    display_todo_list()
 
     while True:
         try:
@@ -96,7 +96,6 @@ def main() -> None:
         elif choice == "2":
             todo: str = input("Enter your todo: ").strip()
             description: str = input("Enter todo description: ").strip()
-
             if todo != "" and description != "":
                 add_todo_item(todo, description)
             else:
