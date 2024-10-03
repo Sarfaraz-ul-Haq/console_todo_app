@@ -103,18 +103,18 @@ def main() -> None:
                 print("Todo / description cannot be empty!\n")
 
         elif choice == "3":
-            index: int = int(input("Enter todo number to update: "))
+            index: int = get_todo_number("update")
             new_todo: str = input("Update todo: ").strip()
             new_description: str = input("Update todo description: ").strip()
             update_todo_item(index, todo_list, new_todo, new_description)
 
         elif choice == "4":
-            index: int = int(input("Enter index: "))
+            index: int = get_todo_number("mark todo as done")
             mark_todo_as_done(index, todo_list)
 
         elif choice == "5":
             try:
-                todo_number: int = int(input("Enter the number of the todo to delete: "))
+                todo_number: int = get_todo_number("delete")
                 delete_todo_item(todo_number)
             except ValueError:
                 print("\nInvalid input. Please enter a number.")
