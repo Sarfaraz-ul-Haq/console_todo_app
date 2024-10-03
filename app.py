@@ -19,7 +19,7 @@ todo_list: List[ToDoItem] = [
     },
 ]
 
-def display_todo_list(todo_list: List[ToDoItem]) -> None:
+def display_todo_list() -> None:
     if not todo_list:
         print("Your Todo list is empty!")
         return
@@ -35,7 +35,7 @@ def display_todo_list(todo_list: List[ToDoItem]) -> None:
 
     print("_________________________________________________________________________________________________________\n")
 
-def add_todo_item(todo_list: List[ToDoItem], todo: str, description: str) -> None:
+def add_todo_item(todo: str, description: str) -> None:
     todo_list.append({"todo": todo, "description": description, "is_completed": False})
     print(f"\nAdded todo: {todo} | Description: {description}")
 
@@ -58,7 +58,7 @@ def delete_todo_item(index: int) -> None:
     else:
         raise IndexError("Invalid todo index.")
         
-def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, description: str) -> None:
+def update_todo_item(index: int, todo: str, description: str) -> None:
     index -= 1
 
     if index >= 0 and index < len(todo_list):
@@ -67,7 +67,7 @@ def update_todo_item(index: int, todo_list: List[ToDoItem], todo: str, descripti
     else:
         raise IndexError("Invalid index")
     
-def mark_todo_as_done(index: int, todo_list: List[ToDoItem]) -> None:
+def mark_todo_as_done(index: int) -> None:
     index -= 1
 
     if index >= 0 and index < len(todo_list):
@@ -91,14 +91,14 @@ def main() -> None:
         choice: str = input("\nEnter your choice: ")
 
         if choice == "1":
-            display_todo_list(todo_list)
+            display_todo_list()
 
         elif choice == "2":
             todo: str = input("Enter your todo: ").strip()
             description: str = input("Enter todo description: ").strip()
 
             if todo != "" and description != "":
-                add_todo_item(todo_list, todo, description)
+                add_todo_item(todo, description)
             else:
                 print("Todo / description cannot be empty!\n")
 
@@ -106,11 +106,11 @@ def main() -> None:
             index: int = get_todo_number("update")
             new_todo: str = input("Update todo: ").strip()
             new_description: str = input("Update todo description: ").strip()
-            update_todo_item(index, todo_list, new_todo, new_description)
+            update_todo_item(index, new_todo, new_description)
 
         elif choice == "4":
             index: int = get_todo_number("mark todo as done")
-            mark_todo_as_done(index, todo_list)
+            mark_todo_as_done(index)
 
         elif choice == "5":
             try:
