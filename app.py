@@ -41,17 +41,15 @@ def add_todo_item(todo: str, description: str) -> None:
 
 def get_todo_number(action: str) -> int:
     display_todo_list()
-
     while True:
         try:
-            task_number: int = int(input(f"\nEnter the task number to {action}: "))
-            return task_number
+            todo_number: int = int(input(f"\nEnter the task number to {action}: "))
+            return todo_number
         except ValueError:
             print("\n Invalid input. Please enter a valid number.")
 
 def delete_todo_item(index: int) -> None:
     index -= 1
-
     if index >= 0 and index < len(todo_list):
         todo_list.pop(index)
         print("\nTodo deleted successfully")
@@ -60,7 +58,6 @@ def delete_todo_item(index: int) -> None:
         
 def update_todo_item(index: int, todo: str, description: str) -> None:
     index -= 1
-
     if index >= 0 and index < len(todo_list):
         todo_list[index]["todo"] = todo
         todo_list[index]["description"] = description
@@ -69,7 +66,6 @@ def update_todo_item(index: int, todo: str, description: str) -> None:
     
 def mark_todo_as_done(index: int) -> None:
     index -= 1
-
     if index >= 0 and index < len(todo_list):
             todo_list[index]["is_completed"] = True
             print("Todo marked as done")
